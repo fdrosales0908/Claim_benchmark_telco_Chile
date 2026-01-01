@@ -1,51 +1,80 @@
 # 📊 Shiny App – TELCO Complaints Text Mining (Chile)
 
 🔗 **Live Shiny Application:**  
-https://latency-fraud-analysis.shinyapps.io/claim_reclamos/
+https://latency-fraud-analysis.shinyapps.io/reclamos/
 
-This Shiny app analyzes **customer complaints from Reclamos.com** related to the main telecom companies in Chile (**Entel, Claro, Movistar, WOM**).  
-It is a **Data Analytics + Compliance portfolio project**, focused on understanding risk signals, recurring issues, and consumer pain points through **web scraping and text mining**.
+This Shiny app analyzes **customer complaints published on Reclamos.cl** related to the main telecom companies in Chile (**Entel, Claro, Movistar, WOM**).
+
+**Reclamos.cl** is an independent Chilean digital platform that works as a public forum where consumers can:
+- publish complaints,
+- express dissatisfaction,
+- and request solutions for negative experiences with companies.
+
+The platform acts as a public reputation space and, in some cases, as a mediator between consumers and companies for small disputes.
+
+This project is part of my **Data Analytics and Compliance portfolio**, with a focus on **consumer protection, monitoring, and text-based risk analysis**.
 
 ---
 
 ## 🧠 Project Summary (Context)
 
-The goal of this project is to explore complaints reported on Reclamos.com for the main TELCO companies in Chile.
+The objective of this project is to explore and analyze **qualitative information** from telecom-related complaints using **web scraping and text mining techniques in R**.
 
-- Data was collected from the first **15 pages** of the website (around **6000 complaints** total).
-- For analysis, the project includes about **1500 complaints per company** (Entel, Claro, Movistar, WOM).
-- These companies represent almost all the TELCO market in Chile (according to SUBTEL industry information).
+- Complaints were collected from the first **15 pages** of Reclamos.cl.
+- The final dataset includes around **6,000 complaints** published between **2023 and 2025**.
+- For text analysis, approximately **1,500 complaints per company** were analyzed (Entel, Claro, Movistar, WOM).
+- Together, these companies represent **more than 90% of the Chilean telecom market**, according to SUBTEL industry data.
 
-Using **R**, the project applies:
-- **Web scraping** to collect complaint text,
-- **Text mining / NLP** to clean and normalize language,
-- **Exploratory visual analysis** to find patterns and main pain points.
-
-This analysis does **not** aim to say which company has more complaints.  
-The goal is to understand the **content** of complaints and identify **common topics** that can be useful for monitoring, compliance, and consumer protection.
+Text mining techniques were applied to identify **common topics, recurring problems, and main user pain points**.
 
 ---
 
 ## 🎯 Research Questions (NLP Focus)
 
-This app uses NLP to answer questions like:
+This application uses **Natural Language Processing (NLP)** to answer questions such as:
 
-- What are the **main pain points** in TELCO complaints?
-- Where do patterns appear for **billing issues, subscriptions, technical problems**, etc.?
-- Are there **text differences by company**?
+- What are the **main pain points** mentioned in telecom complaints?
+- Where do patterns appear related to **billing issues, subscriptions, or technical problems**?
+- Are there **differences in complaint topics by company**?
+
+⚠️ This analysis **does not aim to compare the volume of complaints between companies**, but rather to understand **what users are complaining about**.
+
+---
+
+## 🧩 Methods and Tools
+
+Using **R**, the project applies:
+
+- **Web scraping** to collect complaint texts
+- **Text cleaning and normalization**
+- **Lemmatization using spaCy (spacyr)**
+- Word frequency analysis
+- Exploratory text mining and visualization
+- Comparison of topics across companies
 
 ---
 
 ## ✨ Main Features
 
-- Complaint text cleaning and normalization (basic NLP pipeline)
-- Word frequency analysis
-- Top words / lemmas by company
-- Main pain points view (topic-style grouping / keyword signals)
-- Heatmap of frequent terms (lemmas)
-- Bigrams (common word pairs)
-- Co-occurrence network (word relationship graph)
-- Interactive filters and exploration in Shiny
+- Cleaning and normalization of complaint texts
+- Word and lemma frequency analysis
+- Top lemmas by telecom company
+- Identification of main pain points
+- Heatmap of frequent lemmas
+- Bigram analysis (common word pairs)
+- Co-occurrence network (word relationships)
+- Interactive exploration using Shiny
+
+---
+
+## 📊 Key Results and Insights
+
+- **All companies** show a high presence of complaints related to **incorrect or unfair charges**.
+- **Entel and Claro** present a strong pattern of complaints related to **subscriptions**, often linked to specific services such as *Glamour Sexy* (Entel) and *Hotzone* (Claro), which appear to be adult content services.
+- For **Movistar**, complaints are mainly related to **home internet and fiber service issues**.
+- For **WOM**, the analysis highlights problems related to **internet quality and signal coverage**.
+
+These findings reflect **common consumer pain points** that may be relevant for **monitoring, compliance, and risk analysis**.
 
 ---
 
@@ -71,29 +100,29 @@ This app uses NLP to answer questions like:
 
 ---
 
-## 🔒 Data Privacy Notice (Important)
+## 🔒 Data Privacy Notice
 
 This repository is designed to be **public and safe**.
 
-✅ The repo **does NOT include sensitive or private data**.  
-✅ If you use real complaint data, you should store it locally and exclude it with `.gitignore`.
+- The project **does NOT include sensitive or personal data**.
+- If real complaint data is used, it should be stored **locally** and excluded using `.gitignore`.
 
-Suggested approach:
-- Keep data inside a `data/` folder (local only)
+Recommended approach:
+- Keep raw data inside a `data/` folder (local only)
 - Add `data/` to `.gitignore`
-- Use a small **example dataset** if you want to show structure
+- Share only code, documentation, and safe visual outputs
 
 ---
 
-## 📁 Project Structure (Example)
+## 📁 Project Structure
 
 ```text
 claim_reclamos/
-├── app.R                       # Shiny app entry point (or ui.R + server.R)
-├── R/                          # Helper functions (cleaning, NLP, plots)
-├── data/                       # Local data (ignored in GitHub)
-├── screenshots/                # Images used in README
+├── app.R                       # Shiny app entry point
+├── data/                       # Local data (not included in GitHub)
+├── screenshots/                # Images used in the README
 ├── rsconnect/                  # ShinyApps.io deployment files (optional)
-├── README.md                   # Project description
-├── .gitignore                  # Prevent sensitive files from upload
+├── README.md                   # Project documentation
+├── .gitignore                  # Prevents uploading sensitive files
 └── claim_reclamos.Rproj        # RStudio project file
+
