@@ -1,7 +1,0 @@
-data/
-*.xlsx
-*.csv
-*.rds
-.Rhistory
-.RData
-rsconnect/
