@@ -96,7 +96,7 @@ These findings reflect **common consumer pain points** that may be relevant for 
 ![Bigrams](screenshots/bigrama.png)
 
 ### 6) Co-occurrences Network
-![Co-occurrences](screenshots/co_occurrencias.png)
+![Co-occurrences](screenshots/co_courrencias.png)
 
 ---
 
@@ -107,11 +107,6 @@ This repository is designed to be **public and safe**.
 - The project **does NOT include sensitive or personal data**.
 - If real complaint data is used, it should be stored **locally** and excluded using `.gitignore`.
 
-Recommended approach:
-- Keep raw data inside a `data/` folder (local only)
-- Add `data/` to `.gitignore`
-- Share only code, documentation, and safe visual outputs
-
 ---
 
 ## 📁 Project Structure
@@ -121,7 +116,6 @@ claim_reclamos/
 ├── app.R                       # Shiny app entry point
 ├── data/                       # Local data (not included in GitHub)
 ├── screenshots/                # Images used in the README
-├── rsconnect/                  # ShinyApps.io deployment files (optional)
 ├── README.md                   # Project documentation
 ├── .gitignore                  # Prevents uploading sensitive files
 └── claim_reclamos.Rproj        # RStudio project file
